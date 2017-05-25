@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+ <head>
+        
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script>
+  AFRAME.registerComponent('set-sky', {
+    schema: {default:''},
+    init() {
+      const sky = document.querySelector('a-sky');
+      this.el.addEventListener('click', () => {
+        sky.setAttribute('src', this.data);
+      });
+    }
+  });
+</script>
+ </head>
+
+    <body>
+       <a-scene>
+         <a-camera position="0 7 5">
+           <a-cursor id="cursor" color="#00ff00">
+             <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+             <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+           </a-cursor>
+         </a-camera>
+         
+         <a-sky src="sky6.jpg"></a-sky>  
+
+         <a-entity light="type: directional; color: #fff2e6; intensity: 1.8" position="5 15 0"></a-entity>
+
+         <a-assets timeout="50000">
+           <a-asset-item id="object_island1" src="islandC1.obj"></a-asset-item>
+           <a-asset-item id="material_island1" src="islandC1.mtl"></a-asset-item>
+           <a-asset-item id="object_island2" src="islandC2.obj"></a-asset-item>
+           <a-asset-item id="material_island2" src="islandC2.mtl"></a-asset-item>
+           <a-asset-item id="object_turtle" src="turtleC.obj"></a-asset-item>
+           <a-asset-item id="material_turtle" src="turtleC.mtl"></a-asset-item>
+           <a-asset-item id="object_umbrella" src="umbrellaC.obj"></a-asset-item>
+           <a-asset-item id="material_umbrella" src="umbrellaC.mtl"></a-asset-item>
+           <a-asset-item id="object_picture" src="pictureC.obj"></a-asset-item>
+           <a-asset-item id="material_picture" src="pictureC.mtl"></a-asset-item>
+           <a-asset-item id="object_bottle" src="bottle2.obj"></a-asset-item>
+           <a-asset-item id="material_bottle" src="bottle2.mtl"></a-asset-item>
+     
+           <img id="turtle_scene" src="park2.jpg">
+           <img id="umbrella_scene" src="alley2.jpg">
+           <img id="picture_scene" src="beach2.jpg">
+           <img id="island_scene" src="sky6.jpg">
+
+           <a-sound id="island_audio" src="final.mp3" preload="auto">
+         </a-assets>
+
+         <a-obj-model id="island1" src="#object_island1" mtl="#material_island1" scale="2 2 2" sound="src:final.mp3; autoplay: true; loop: true">
+           <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation></a-obj-model>
+
+         <a-obj-model id="island2" src="#object_island2" mtl="#material_island2" scale="2 2 2">
+           <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation></a-obj-model>
+
+         <a-obj-model id="turtle" src="#object_turtle" mtl="#material_turtle" scale="2 2 2" begin="click" set-sky="#turtle_scene"> 
+           <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation>
+           <a-animation attribute="rotation" begin="click" repeat="3" to="3 2 1" direction="alternate-reverse"></a-animation>
+          </a-obj-model>
+
+         <a-obj-model id="umbrella" src="#object_umbrella" mtl="#material_umbrella" scale="2 2 2" begin="click" set-sky="#umbrella_scene" begin="click">
+           <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation>
+           <a-animation attribute="rotation" begin="click" repeat="3" to="0 3 0" direction="alternate-reverse"></a-animation>
+           </a-obj-model>
+
+         <a-obj-model id="picture" src="#object_picture" mtl="#material_picture" scale="2 2 2" begin="click" set-sky="#picture_scene" begin="click">
+           <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation>
+           <a-animation attribute="rotation" begin="click" repeat="3" to="0 3 0" direction="alternate-reverse"></a-animation>
+           </a-obj-model>
+
+         <a-obj-model id="bottle" src="#object_bottle" mtl="#material_bottle" scale="2 2 2" begin="click" set-sky="#island_scene">
+             <a-animation attribute="rotation" begin="click" repeat="3" to="0 3 0" direction="alternate-reverse"></a-animation>
+         </a-obj-model>
+
+
+      
+
+       </a-scene>
+
+    </body>
+
+    <script type="text/javascript">
+      var turtle; island1; island2; umbrella; picture; bottle
+      turtle=document.getElementById('turtle');
+      island=document.getElementById('island');
+      umbrella=document.getElementById('umbrella');
+      picture=document.getElementById('picture');
+      bottle=document.getElementById('bottle');
+      turtle.addEventListener('click', function(){
+        island1.setAttribute('visible','false');
+        island2.setAttribute('visible', 'false');
+        umbrella.setAttribute('visible','false');
+        picture.setAttribute('visible', 'false');
+        turtle.setAttribute('visible','false');
+        bottle.setAttribute('visible','true');
+       
+        
+      });
+
+      umbrella.addEventListener('click', function(){
+        island1.setAttribute('visible','false');
+        island2.setAttribute('visible', 'false');
+        umbrella.setAttribute('visible','false');
+        picture.setAttribute('visible', 'false');
+        turtle.setAttribute('visible','false');
+        bottle.setAttribute('visible','true');
+       
+        
+      });
+
+      picture.addEventListener('click', function(){
+        island1.setAttribute('visible','false');
+        island2.setAttribute('visible', 'false');
+        umbrella.setAttribute('visible','false');
+        picture.setAttribute('visible', 'false');
+        turtle.setAttribute('visible','false');
+        bottle.setAttribute('visible','true');
+
+     
+      });
+
+      bottle.addEventListener('click', function(){
+        island1.setAttribute('visible','true');
+        island2.setAttribute('visible', 'true');
+        umbrella.setAttribute('visible','true');
+        picture.setAttribute('visible', 'true');
+        turtle.setAttribute('visible','true');
+        bottle.setAttribute('visible','true');
+      
+     
+      });
+
+
+
+    </script>
+</html>
+
+
+
