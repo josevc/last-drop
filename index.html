@@ -43,14 +43,14 @@
            <a-asset-item id="object_island3" src="island3.obj"></a-asset-item>
            <a-asset-item id="material_island3" src="island3.mtl"></a-asset-item>
   
-           <a-asset-item id="object_turtle" src="https://cdn.rawgit.com/josevc/last-drop/master/last-drop/models/turtle.obj"></a-asset-item>
-    
-           <a-asset-item id="object_umbrella" src="https://cdn.rawgit.com/josevc/last-drop/master/last-drop/models/umbrella.obj"></a-asset-item>
-  
-           <a-asset-item id="object_picture" src="https://cdn.rawgit.com/josevc/last-drop/master/last-drop/models/picture.obj"></a-asset-item>
-     
-           <a-asset-item id="object_bottle" src="https://cdn.rawgit.com/josevc/last-drop/master/last-drop/models/bottle2.obj"></a-asset-item>
-     
+           <a-asset-item id="object_turtle" src="models/turtle.obj"></a-asset-item>
+           <a-asset-item id="material_turtle" src="models/turtle.mtl"></a-asset-item>
+           <a-asset-item id="object_umbrella" src="models/umbrella.obj"></a-asset-item>
+           <a-asset-item id="material_umbrella" src="models/umbrella.mtl"></a-asset-item>
+           <a-asset-item id="object_picture" src="models/picture.obj"></a-asset-item>
+           <a-asset-item id="material_picture" src="models/picture.mtl"></a-asset-item>
+           <a-asset-item id="object_bottle" src="models/bottle2.obj"></a-asset-item>
+           <a-asset-item id="material_bottle" src="models/bottle2.mtl"></a-asset-item>
      
            <img id="turtle_scene" src="park2.jpg">
            <img id="umbrella_scene" src="alley2.jpg">
@@ -67,22 +67,22 @@
          <a-obj-model id="island3" src="#object_island3" mtl="#material_island3" scale="2 2 2">
            <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation></a-obj-model>
 
-         <a-obj-model id="turtle" src="#object_turtle" scale="2 2 2" begin="click" set-sky="#turtle_scene"> 
+         <a-obj-model id="turtle" src="#object_turtle"  mtl="#material_turtle" scale="2 2 2" begin="click" set-sky="#turtle_scene"> 
            <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation>
            <a-animation attribute="rotation" begin="click" repeat="3" to="3 2 1" direction="alternate-reverse"></a-animation>
           </a-obj-model>
 
-         <a-obj-model id="umbrella" src="#object_umbrella"  scale="2 2 2" begin="click" set-sky="#umbrella_scene" begin="click">
+         <a-obj-model id="umbrella" src="#object_umbrella" mtl="#material_umbrella" scale="2 2 2" begin="click" set-sky="#umbrella_scene" begin="click">
            <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation>
            <a-animation attribute="rotation" begin="click" repeat="3" to="0 3 0" direction="alternate-reverse"></a-animation>
            </a-obj-model>
 
-         <a-obj-model id="picture" src="#object_picture"  scale="2 2 2" begin="click" set-sky="#picture_scene" begin="click">
+         <a-obj-model id="picture" src="#object_picture" mtl="#material_picture" scale="2 2 2" begin="click" set-sky="#picture_scene" begin="click">
            <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation>
            <a-animation attribute="rotation" begin="click" repeat="3" to="0 3 0" direction="alternate-reverse"></a-animation>
            </a-obj-model>
 
-         <a-obj-model id="bottle" src="#object_bottle" scale="2 2 2" begin="click" set-sky="#island_scene">
+         <a-obj-model id="bottle" src="#object_bottle" mtl="#material_bottle" scale="2 2 2" begin="click" set-sky="#island_scene">
              <a-animation attribute="rotation" begin="click" repeat="3" to="0 3 0" direction="alternate-reverse"></a-animation>
          </a-obj-model>
 
