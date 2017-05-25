@@ -36,9 +36,12 @@
          <a-entity light="type: directional; color: #fff2e6; intensity: 1.8" position="5 15 0"></a-entity>
 
          <a-assets timeout="50000000">
-           <a-asset-item id="object_island1" src="https://cdn.rawgit.com/josevc/last-drop/master/last-drop/models/island1.obj"></a-asset-item>
-           <a-asset-item id="object_island2" src="https://cdn.rawgit.com/josevc/last-drop/master/last-drop/models/island2.obj"></a-asset-item>
-           <a-asset-item id="object_island3" src="https://cdn.rawgit.com/josevc/last-drop/master/last-drop/models/island3.obj"></a-asset-item>
+           <a-asset-item id="object_island1" src="island1.obj"></a-asset-item>
+           <a-asset-item id="material_island1" src="island1.mtl"></a-asset-item>
+           <a-asset-item id="object_island2" src="island2.obj"></a-asset-item>
+           <a-asset-item id="material_island2" src="island2.mtl"></a-asset-item>
+           <a-asset-item id="object_island3" src="island3.obj"></a-asset-item>
+           <a-asset-item id="material_island3" src="island3.mtl"></a-asset-item>
   
            <a-asset-item id="object_turtle" src="https://cdn.rawgit.com/josevc/last-drop/master/last-drop/models/turtle.obj"></a-asset-item>
     
@@ -57,11 +60,11 @@
            <a-sound id="island_audio" src="final.mp3" preload="auto">
          </a-assets>
 
-         <a-obj-model id="island1" src="#object_island1" scale="2 2 2" sound="src:final.mp3; autoplay: true; loop: true">
+         <a-obj-model id="island1" src="#object_island1" src="#material_island1" scale="2 2 2" sound="src:final.mp3; autoplay: true; loop: true">
            <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation></a-obj-model>
-         <a-obj-model id="island2" src="#object_island2" scale="2 2 2">
+         <a-obj-model id="island2" src="#object_island2" src="#material_island2" scale="2 2 2">
            <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation></a-obj-model>
-         <a-obj-model id="island3" src="#object_island3" scale="2 2 2">
+         <a-obj-model id="island3" src="#object_island3" src="#material_island3" scale="2 2 2">
            <a-animation attribute="position" from="0 0 0" to="0 2 0" dur="4000" direction="alternate-reverse" repeat="indefinite"></a-animation></a-obj-model>
 
          <a-obj-model id="turtle" src="#object_turtle" scale="2 2 2" begin="click" set-sky="#turtle_scene"> 
